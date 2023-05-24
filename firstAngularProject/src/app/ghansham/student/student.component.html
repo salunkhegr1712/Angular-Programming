@@ -1,0 +1,4 @@
+<h1>Student database</h1>
+<div *ngFor="let i of studentlist">
+    <app-student-item [item]="i" (outputEvent)="modifyData($event)"></app-student-item>
+</div>

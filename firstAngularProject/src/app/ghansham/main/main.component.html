@@ -1,0 +1,17 @@
+<!-- <ul *ngFor="let i of todos">
+     <li>Serial Number : {{i.sn}} Title : {{i.title}} Description : {{i.desc}}</li>
+</ul> -->
+
+<!-- {{todos}} -->
+
+<!-- now let pass it to next component and each object in link will acts like i/o  -->
+
+<div *ngFor="let oneitem of todos">
+     
+     <!-- listen for todo delete event  -->
+
+     <!-- we are hering for tododelte event and when we get it we call function todoupdate -->
+     <app-np [todo]="oneitem" (tododelete)="todoupdate($event)"></app-np>
+</div>
+
+<!-- $event is variable which help us to find which event caused this call  -->

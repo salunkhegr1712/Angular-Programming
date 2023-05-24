@@ -1,0 +1,13 @@
+
+<div class="mg-3">
+    <br>
+    <h3>{{item.mis}} : {{item.name}}</h3>
+        {{item.branch}} : {{item.division}}
+        <!-- so anyone click on delete we will pass it to onclick  -->
+        <br><br>
+    
+    <!-- <button class="btn btn-danger"> Delete</button> -->
+    <!-- now add event listener to it and pass student of conflict  -->
+    <button class="btn btn-danger" (click)="onClick(item)"> Delete</button>
+</div>
+
