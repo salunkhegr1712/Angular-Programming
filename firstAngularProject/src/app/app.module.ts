@@ -7,6 +7,9 @@ import { MainComponent } from './ghansham/main/main.component';
 import { NpComponent } from './ghansham/np/np.component';
 import { StudentComponent } from './ghansham/student/student.component';
 import { StudentItemComponent } from './ghansham/student-item/student-item.component';
+import { AddstudentComponent } from './ghansham/addstudent/addstudent.component';
+import { AdditemComponent } from './ghansham/additem/additem.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -14,11 +17,15 @@ import { StudentItemComponent } from './ghansham/student-item/student-item.compo
     MainComponent,
     NpComponent,
     StudentComponent,
-    StudentItemComponent
+    StudentItemComponent,
+    AddstudentComponent,
+    AdditemComponent,
+
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

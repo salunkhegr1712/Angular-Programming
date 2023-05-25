@@ -1,0 +1,22 @@
+<div>
+      <form (ngSubmit)="studentSubmit()">
+          <div class="mb-3">
+              <label for="text" class="form-label">Student Name</label>
+              <input type="text" [(ngModel)]="name" class="form-control" name="name" id="name" >
+            
+          </div>
+          <div class="mb-3">
+              <label for="text" class="form-label">Mis Number</label>
+              <input type="tel" [(ngModel)]="mis" class="form-control" name="mis" id="mis" >
+          </div>
+          <div class="mb-3">
+              <label for="text" class="form-label">Branch of Student</label>
+              <input type="text" [(ngModel)]="branch" class="form-control" name="branch" id="branch" >
+          </div>  
+          <div class="mb-3">
+              <label for="text" class="form-label">Division</label>
+              <input type="tel" [(ngModel)]="division" class="form-control" name="division" id="division" >
+          </div>  
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+  </div>

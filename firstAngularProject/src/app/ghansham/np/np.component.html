@@ -1,7 +1,21 @@
-<div class="mg-3">
-    <h3>{{todo.sn}} : {{todo.title}}</h3>
-        {{todo.desc}}
-        <!-- so anyone click on delete we will pass it to onclick  -->
+<div class="mg-3"> <br>
+
+    <div *ngIf="todo.check==true; else elseBlock">
+        <h3 >{{todo.sn}} : {{todo.title}}</h3> <br>
+        {{todo.desc}} <br><br>
+    </div>
+    <ng-template #elseBlock>
+        <h3 ><s>{{todo.sn}} : {{todo.title}}</s> </h3> <br>
+        <s>{{todo.desc}}</s>
+        <br><br>
+    
+    </ng-template>
+    
+        <!-- so anyone click on delete we will pass it to onclick  --> 
+    <div class="mb-3 form-check" (click)="strike()">
+        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+        <label class="form-check-label" for="exampleCheck1">Done With This</label>
+    </div>
     <button class="btn btn-danger" (click)="onClick(todo)"> Delete</button>
 
 </div>

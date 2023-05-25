@@ -7,31 +7,31 @@ import { Student } from 'src/app/student';
 })
 export class StudentComponent {
   title="hello"
+  localitem=localStorage.getItem("StudentDatabase")
   studentlist:Student[];
   constructor(){
-    this.studentlist=[{
-      name:"ghansham",
-      mis:111903033,
-      branch:"comp",
-      division:1,
-    },
-    {
-      name:"abhi",
-      mis:11191002,
-      branch:"mech",
-      division:1,
-    },
-    {
-      name:"yash",
-      mis:111485122,
-      branch:"extc",
-      division:1,
-    }  
-  ]
-  }
+      // if this.localitem is empty so we assign the list as null 
+      if(this.localitem==null){
+        this.studentlist=[]
+      }
+      else{
+        this.studentlist=JSON.parse(this.localitem)
+      }
+
+  } 
   modifyData(item:Student){
     console.log(item)
     let m=this.studentlist.indexOf(item)
     this.studentlist.splice(m,1)
+
+    // code to store and update data in local storage 
+    localStorage.setItem("StudentDatabase",JSON.stringify(this.studentlist))
+  }
+
+  addStudent(item:Student){
+    console.log(item)
+    this.studentlist.push(item)
+    // code to store the data locally 
+    localStorage.setItem("StudentDatabase",JSON.stringify(this.studentlist))
   }
 }

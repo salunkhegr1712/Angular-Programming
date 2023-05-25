@@ -1,4 +1,8 @@
 <h1>Student database</h1>
+<div *ngIf="studentlist.length==0; else elseBlock">No Student Data to Display!</div>
+<ng-template #elseBlock>Data Provided Below !</ng-template>
 <div *ngFor="let i of studentlist">
     <app-student-item [item]="i" (outputEvent)="modifyData($event)"></app-student-item>
 </div>
+<br>
+<app-addstudent (appendNewStudent)="addStudent($event)"></app-addstudent>

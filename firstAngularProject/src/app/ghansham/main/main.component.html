@@ -11,7 +11,10 @@
      <!-- listen for todo delete event  -->
 
      <!-- we are hering for tododelte event and when we get it we call function todoupdate -->
-     <app-np [todo]="oneitem" (tododelete)="todoupdate($event)"></app-np>
-</div>
-
-<!-- $event is variable which help us to find which event caused this call  -->
+     <app-np [todo]="oneitem"  (tododelete)="todoupdate($event)" (updateCheckbox)="updateDataset($event)"></app-np>
+</div> <br>
+<div *ngIf="todos.length == 0; else elseBlock"> <h3>No TO Do to display !</h3></div>
+<ng-template #elseBlock></ng-template>
+<h3>Want to add new item ?</h3>
+  <app-additem (additem)="todoadd($event)"></app-additem>
+<!-- $event is variable which help us to find which event caused this call -->
